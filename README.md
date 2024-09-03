@@ -1,11 +1,4 @@
 # Pangea
-Explore the new world
 
-
-
-Currently:
-
-1. Database connections works.
-
-To do:
+Pangea allows you to create a history of all the species you find on your adventures!
 
