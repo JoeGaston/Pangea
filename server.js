@@ -8,7 +8,7 @@ const app = express() // stores the express function in a varibale called app, i
 const port = process.env.PORT || 4000 //pulls the PORT variable from the .env file and declares a back up
 const passport = require('passport') // this is how we use passport js
 const session = require('express-session')
-const MongoStore = require('connect-mongo')(session)
+//const MongoStore = require('connect-mongo')(session)
 const flash = require('express-flash')
 const logger = require('morgan')
 
