@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(34, 152, 34);
+    height: 800px;
+    width: auto;
+}
+
+form {
+    flex-direction: column;
+}
