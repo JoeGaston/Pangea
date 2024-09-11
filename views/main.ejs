@@ -8,14 +8,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <% if (locals.messages.errors) { %>
+        <% messages.errors.forEach( el => { %>
+            <div class="alert alert-danger"><%= el.msg %></div>
+        <% }) %>    
+    <% } %>
+    <% if (locals.messages.info) { %>
+        <% messages.info.forEach( el => { %>
+            <div class="alert alert-danger"><%= el.msg %></div>
+        <% }) %>    
+    <% } %>
     <div class="container">
 
         <div class="center-box">
+            
             <h1>Pangea</h1>
-            <form action="POST">
-                <input type="text" placeholder="Email" name="" id="">
-                <input type="text" placeholder="Password" name="" id="">
-                <button id="">LOGIN</button>
+            <form action="/myAccount" method="POST"> <!-- Does this need an action?-->
+                <input type="text" placeholder="Email" name="email" id="">
+                <input type="password" placeholder="Password" name="password" id="">
+                <input type="submit">
                 <p>Not Registered?</p>
                 <a href="/createAccount">Create an account</a>
             </form>

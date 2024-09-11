@@ -2,13 +2,35 @@ const bcrypt = require('bcrypt')
 const mongoose = require('mongoose')
 
 const UserSchema = new mongoose.Schema ({
-    userName: { type : String, unique: true },
-    email: { type: String, unique: true},
-    password: String
+    userName: { 
+        type : String, 
+        unique: true,
+        required: true,
+    }, 
+    email: { 
+        type: String, 
+        unique: true,
+        required: true,
+    },
+    password: {
+        type: String, 
+        unique: true,
+        required: true,
+        minlength: 10,
+    },
+    role: {
+        type: String,
+        default: 'Basic',
+        required: true,
+    },
+    createdAt: {
+      type: Date,
+      default: Date.now  // Automatically sets the date when the user is created
+    }
 })
 
 
-// ! middleware for hashing password
+// ! middleware for hashing password using bcrypt
 
 UserSchema.pre('save', function save(next) {
     const user = this
@@ -24,7 +46,7 @@ UserSchema.pre('save', function save(next) {
   })
   
   
-  // Helper method for validating user's password.
+  //! Helper method for validating user's password.
   
   UserSchema.methods.comparePassword = function comparePassword(candidatePassword, cb) {
     bcrypt.compare(candidatePassword, this.password, (err, isMatch) => {
@@ -33,4 +55,4 @@ UserSchema.pre('save', function save(next) {
   }
   
   
-  module.exports = mongoose.model('User', UserSchema)
+  module.exports = mongoose.model('User', UserSchema) //exports schema to user model

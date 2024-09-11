@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(34, 152, 34);
+    height: 500px;
+    width: auto;
+}
+
+h1 {
+    
+}

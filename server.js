@@ -8,9 +8,22 @@ const app = express() // stores the express function in a varibale called app, i
 const port = process.env.PORT || 4000 //pulls the PORT variable from the .env file and declares a back up
 const passport = require('passport') // this is how we use passport js
 const session = require('express-session')
-//const MongoStore = require('connect-mongo')(session)
+const MongoStore = require('connect-mongo')
 const flash = require('express-flash')
 const logger = require('morgan')
+
+//! Passport config
+require('./config/passport')(passport)
+
+//! Sessions
+app.use(
+    session({
+      secret: 'keyboard cat',
+      resave: false,
+      saveUninitialized: false,
+      cookie: { maxAge: 24 * 60 * 60 * 1000 } // this is the max age of the session, derived from type ellapsed in the cookies.
+    })
+  )
 
 
 
@@ -22,6 +35,12 @@ app.use(express.urlencoded({extended: true})) // help server read incoming reque
 app.use(methodOverride('method'))
 app.use(express.json()) // help server read incoming requests. Parse requests with JSON 
 app.set('view engine', 'ejs') // sets EJS at the templating engine for the project. tells server to send stuff to views folder
+app.use(flash())
+app.use(logger('dev'))
+
+// ! Passport middleware
+app.use(passport.initialize());
+app.use(passport.session())
 
 
 
@@ -38,14 +57,11 @@ mongoose.connect(`mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MO
 const mainRoute = require('./routes/main') // declares the locations of the route to be used
 app.use('/', mainRoute) // This will route them to the loginRoute Route
 
-
 const createAccountRoute = require('./routes/createAccount') // declares the locations of the route to be used
 app.use('/createAccount', createAccountRoute) // if user tries to access this route - use that router
 
-
-
-
-
+const myAccountRoute = require('./routes/myAccount') // declares a new route location for user once logged in
+app.use('/myAccount', myAccountRoute)
 
 
 
