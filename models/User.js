@@ -55,4 +55,4 @@ UserSchema.pre('save', function save(next) {
   }
   
   
-  module.exports = mongoose.model('User', UserSchema) //exports schema to user model
+  module.exports = mongoose.model('User', UserSchema) //exports schema to user collection

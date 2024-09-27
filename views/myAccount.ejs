@@ -10,10 +10,25 @@
 <body>
     <div class="container">
         <h1>Pangea.</h1>
-        <h3>Welcome, <%= username %> </h3>
+        <nav>
+            <ul>
+                <li><a href="#">Discover</a></li>
+                <li><a href="#">Lifelist</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </nav>
+        <p>Welcome, <%= username %> </p>
+
+        <div class="photoOfTheDay">
+            <span>info/ IMG from API</span>
+        </div>
 
     <form action="/logout" method="POST">
         <button type="submit">logout</button>
+    </form>
+
+    <form action="/startList" method="GET">
+        <button type="submit">Start A List!</button>
     </form>
     </div>
     

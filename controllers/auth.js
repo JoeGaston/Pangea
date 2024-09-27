@@ -30,6 +30,7 @@ exports.postLogin = (req, res, next) => {
 
 
 exports.postNewAccount = (req, res, next) => { // this is for validating and creating a new account.
+    console.log(req.body)
     const validationErrors = []
     if (!validator.isEmail(req.body.email)) validationErrors.push({ msg: 'Please enter a valid email address.' })
     if (!validator.isLength(req.body.password, { min: 10 })) validationErrors.push({ msg: 'Password must be at least 10 characters long' })

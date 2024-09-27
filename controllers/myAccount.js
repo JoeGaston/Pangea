@@ -9,4 +9,3 @@ module.exports = {
         console.log(req.user)
     }
 }
-

@@ -1,6 +1,6 @@
 .container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: rgb(34, 152, 34);
@@ -8,6 +8,27 @@
     width: auto;
 }
 
-h1 {
+.photoOfTheDay {
+    height: 200px;
+    width: 150px;
+    border: solid black 1px;
+    border-radius: 5px;
+    color: white;
+}
+
+nav {
+    text-align: center;
+    width: 40%;
+}
+
+nav ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+li {
     
+    flex-direction: row;
+    list-style-type: none;
 }
