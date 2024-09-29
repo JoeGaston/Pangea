@@ -6,8 +6,9 @@ const { ensureAuth } = require('../middleware/auth')
 // const authController = require('../controllers/auth')
 
 //! Routes
+router.use(ensureAuth) // This will be applied to ALL following routing
 
-router.get('/', ensureAuth, myAccountController.welcome) // Sends user to their account page
+router.get('/', myAccountController.welcome) // Sends user to their account page
 
 
 
