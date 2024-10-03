@@ -1,11 +1,11 @@
 //! Requirements & Variables
 const express = require('express')
 const router = express.Router()
-const startListController = require('../controllers/startList')
-const { ensureAuth, ensureGuest } = require('../middleware/auth')
+const startListController = require('../controllers/startlist')
+const { ensureAuth } = require('../middleware/auth')
 
 //! Routes
-router.get('/', startListController.startList)
+router.get('/', startListController.startlist)
 
 //! exports
 

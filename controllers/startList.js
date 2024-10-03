@@ -1,6 +1,6 @@
 
 module.exports = {
-    startList: (req, res) => {
+    startlist: (req, res) => {
         res.render('currentList.ejs')
     }
 }

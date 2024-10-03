@@ -1,7 +1,7 @@
 //! Requirements & Variables
 const express = require('express')
 const router = express.Router()
-const myAccountController = require('../controllers/myAccount')
+const myAccountController = require('../controllers/myaccount')
 const { ensureAuth } = require('../middleware/auth')
 // const authController = require('../controllers/auth')
 

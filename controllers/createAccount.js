@@ -1,5 +1,5 @@
 module.exports = {
-    createAccount: (req, res) => {
-        res.render('create-account.ejs')
+    createaccount: (req, res) => {
+        res.render('createAccount.ejs')
     }
 }

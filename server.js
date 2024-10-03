@@ -8,7 +8,7 @@ const app = express() // stores the express function in a varibale called app, i
 const port = process.env.PORT || 4000 //pulls the PORT variable from the .env file and declares a back up
 const passport = require('passport') // this is how we use passport js
 const session = require('express-session')
-const MongoStore = require('connect-mongo')
+// const MongoStore = require('connect-mongo')
 const flash = require('express-flash')
 const logger = require('morgan')
 
@@ -57,14 +57,14 @@ mongoose.connect(`mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MO
 const mainRoute = require('./routes/main') // declares the locations of the route to be used
 app.use('/', mainRoute) // This will route them to the loginRoute Route
 
-const createAccountRoute = require('./routes/createAccount') // declares the locations of the route to be used
-app.use('/createAccount', createAccountRoute) // if user tries to access this route - use that router
+const createAccountRoute = require('./routes/createaccount') // declares the locations of the route to be used
+app.use('/createaccount', createAccountRoute) // if user tries to access this route - use that router
 
-const myAccountRoute = require('./routes/myAccount') // declares a new route location for user once logged in
-app.use('/myAccount', myAccountRoute)
+const myAccountRoute = require('./routes/myaccount') // declares a new route location for user once logged in
+app.use('/myaccount', myAccountRoute)
 
-const startListRoute = require('./routes/startList') // declares a new route location for user once logged in
-app.use('/startList', startListRoute) //add myAccount to root
+const startListRoute = require('./routes/startlist') // declares a new route location for user once logged in
+app.use('/startlist', startListRoute) //add myAccount to root
 
 // const adminRoute = require('./routes/admin')
 // app.use('/admin', adminRoute)
