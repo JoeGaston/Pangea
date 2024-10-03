@@ -10,7 +10,7 @@ router.use(ensureAuth) // This will be applied to ALL following routing
 
 router.get('/', myAccountController.welcome) // Sends user to their account page
 
-// router.get('/admin', myAccountController.admin)
+router.get('/admin', myAccountController.admin)
 
 
 

@@ -66,8 +66,8 @@ app.use('/myAccount', myAccountRoute)
 const startListRoute = require('./routes/startList') // declares a new route location for user once logged in
 app.use('/startList', startListRoute) //add myAccount to root
 
-const adminRoute = require('./routes/admin')
-app.use('/admin', adminRoute)
+// const adminRoute = require('./routes/admin')
+// app.use('/admin', adminRoute)
 
 
 
