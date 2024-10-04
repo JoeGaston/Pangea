@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const OrganismsSchema = new mongoose.Schema({
+const OrganismSchema = new mongoose.Schema({
     // name fields
     name: {
         commonName: {
@@ -64,15 +64,11 @@ const OrganismsSchema = new mongoose.Schema({
             type: String, 
             required: false,
         },
-        isHybrid: {
-            type: Boolean,
-            required: false
-        },
-        isDomesticated: {
-            type: Boolean,
-            default: false,
-            required: true,
-        }
+        // isDomesticated: {
+        //     type: Boolean,
+        //     default: false,
+        //     required: true,
+        // }
     },
     
 
