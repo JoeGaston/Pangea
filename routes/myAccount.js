@@ -12,6 +12,8 @@ router.get('/', myAccountController.welcome) // Sends user to their account page
 
 router.get('/admin', myAccountController.admin)
 
+router.post('/admin', myAccountController.addOrganism)
+
 
 
 

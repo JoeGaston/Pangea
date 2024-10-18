@@ -5,7 +5,6 @@ Pangea allows you to create a history of all the species you find on your advent
 
 
 Current issues: 
-    - After a user registers..
-        - Need to let them know their account was created!
-
-    - 
+    - working on description submission
+    - need to set up cloudinary
+    - why does logged in user get logged out sometimes?

@@ -13,9 +13,9 @@
         <p>Admin Console</p>
     </div>
     <div class ="container">
-        <form action="/addorganism" method="POST">
+        <form action="/myaccount/admin" method="POST">
             <input type="text" name="commonName" required placeholder="Common Name">
-            <input type="text" name="ScientificName" required placeholder="Scientific Name">
+            <input type="text" name="scientificName" required placeholder="Scientific Name">
             <input type="text" name="domain" required placeholder="Domain">
             <input type="text" name="kingdom" required placeholder="Kingdom">
             <input type="text" name="phylum" required placeholder="Phylum">
@@ -27,11 +27,9 @@
             <input type="text" name="subSpecies" required placeholder="Sub Species (optional)">
             <input type="text" name="variety" required placeholder="Variety (optional)">
             <input type="text" name="morph" required placeholder="Morph (optional)">
-            <input type="text" name="form" required placeholder="form (optional)">
-            <input type="text" name="continent" required placeholder="Continent Found">
-            <textarea id="description" name="description" required placeholder="Enter a description" rows="4" cols="50">
-            </textarea>
-            
+            <input type="text" name="form" required placeholder="form (optional)"> 
+            <input type="text" name="continents[]" required placeholder="Continents Found">
+            <!-- <textarea id="description" name="description" required placeholder="Enter a description" rows="4" cols="50"></textarea> -->
 
             <input type="submit">
         </form>
@@ -40,3 +38,8 @@
 
 </body>
 </html>
+            
+
+
+            <!-- <input type="text" name="imageUrl" required placeholder="Image URL">
+            

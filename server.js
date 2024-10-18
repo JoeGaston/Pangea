@@ -54,20 +54,17 @@ mongoose.connect(`mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MO
 
 //! Routing (These are the URLs that you are on when you submit the request)
 
-const mainRoute = require('./routes/main') // declares the locations of the route to be used
-app.use('/', mainRoute) // This will route them to the loginRoute Route
+const mainRoute = require('./routes/main') 
+app.use('/', mainRoute) 
 
-const createAccountRoute = require('./routes/createaccount') // declares the locations of the route to be used
-app.use('/createaccount', createAccountRoute) // if user tries to access this route - use that router
+const createAccountRoute = require('./routes/createaccount') 
+app.use('/createaccount', createAccountRoute) 
 
-const myAccountRoute = require('./routes/myaccount') // declares a new route location for user once logged in
-app.use('/myaccount', myAccountRoute)
+const myAccountRoute = require('./routes/myaccount') 
+app.use('/myaccount', myAccountRoute) 
 
-const startListRoute = require('./routes/startlist') // declares a new route location for user once logged in
-app.use('/startlist', startListRoute) //add myAccount to root
-
-// const adminRoute = require('./routes/admin')
-// app.use('/admin', adminRoute)
+const startListRoute = require('./routes/startlist') 
+app.use('/startlist', startListRoute) 
 
 
 
