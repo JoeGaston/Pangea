@@ -11,6 +11,9 @@ const session = require('express-session')
 // const MongoStore = require('connect-mongo')
 const flash = require('express-flash')
 const logger = require('morgan')
+const cloudinary = require('cloudinary').v2
+
+
 
 //! Passport config
 require('./config/passport')(passport)

@@ -1,5 +1,6 @@
 const express = require ("express")
 const Organism = require("../models/Organism")
+const cloudinary = require("../middleware/cloudinary");
 
 
 module.exports = {
@@ -22,8 +23,9 @@ module.exports = {
     },
 
     addOrganism: async (req, res) => {
-        // const name = req.body.commonName // this works
-        // console.log(name + 'bird')
+
+        const result = await cloudinary.uploader.upload(req.file.path);
+
          try {
             const organism = new Organism({
                 commonName: req.body.commonName,
@@ -40,6 +42,8 @@ module.exports = {
                 variety: req.body.variety,
                 morph: req.body.morph,
                 form: req.body.form,
+                image: result.secure_url,
+                cloudinaryId: result.public_id,
                 continents: req.body.continents,
                 // description: res.body.description,
 

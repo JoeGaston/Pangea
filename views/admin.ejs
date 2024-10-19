@@ -13,7 +13,7 @@
         <p>Admin Console</p>
     </div>
     <div class ="container">
-        <form action="/myaccount/admin" method="POST">
+        <form action="/myaccount/admin" enctype="multipart/form-data" method="POST">
             <input type="text" name="commonName" required placeholder="Common Name">
             <input type="text" name="scientificName" required placeholder="Scientific Name">
             <input type="text" name="domain" required placeholder="Domain">
@@ -29,6 +29,7 @@
             <input type="text" name="morph" required placeholder="Morph (optional)">
             <input type="text" name="form" required placeholder="form (optional)"> 
             <input type="text" name="continents[]" required placeholder="Continents Found">
+            <input type="file" name="image" />
             <!-- <textarea id="description" name="description" required placeholder="Enter a description" rows="4" cols="50"></textarea> -->
 
             <input type="submit">

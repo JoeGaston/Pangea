@@ -18,6 +18,8 @@ const OrganismSchema = new mongoose.Schema({
     morph: { type: String, required: false },
     form: { type: String, required: false },
     continents: { type: [String], required: true },
+    image: { type: String, require: true },
+    cloudinaryId: { type: String, require: true },
     // description: { type: String, required: true},
 
     createdAt: { type: Date, default: Date.now },
